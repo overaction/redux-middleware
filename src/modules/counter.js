@@ -10,6 +10,20 @@ const initialState = {
     number: 0
 };
 
+//Thunk 생성함수 만들기!
+// 1초 뒤에 increase 혹은 decrease 함수를 dispatch(실행) 해줌 
+export const increaseAsync = () => (dispatch) => {
+    setTimeout(() => {
+        dispatch(increase());
+    },1000);
+};
+
+export const decreaseAsync = () => (dispatch) => {
+    setTimeout(() => {
+        dispatch(decrease());
+    },1000);
+};
+
 const counter = handleActions(
     {
         [INCREASE]: (stat, action) => ({number : stat.number + 1}),
