@@ -1,4 +1,5 @@
 import {createAction, handleActions} from 'redux-actions';
+import { SubjectSubscriber } from 'rxjs/internal/Subject';
 
 const INCREASE = 'counter/INCREASE';
 const DECREASE = 'counter/DECREASE';
@@ -26,7 +27,7 @@ export const decreaseAsync = () => (dispatch) => {
 
 const counter = handleActions(
     {
-        [INCREASE]: (stat, action) => ({number : stat.number + 1}),
+        [INCREASE]: (stat, action) => ({number: stat.number + 1}),
         [DECREASE]: (state, action) => ({number : state.number - 1})
     },
     initialState
