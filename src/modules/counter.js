@@ -1,5 +1,4 @@
 import {createAction, handleActions} from 'redux-actions';
-import { SubjectSubscriber } from 'rxjs/internal/Subject';
 
 const INCREASE = 'counter/INCREASE';
 const DECREASE = 'counter/DECREASE';

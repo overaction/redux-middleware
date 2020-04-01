@@ -62,3 +62,56 @@ const initialState = {
     post: null,
     users: null
 }
+
+const sample = handleActions(
+    {
+        [GET_POST]: (state,action) => ({
+            ...state,
+            loading: {
+                ...state.loading,
+               ...state.loading,
+                GET_POST: true, //요청시작
+            }
+        }),
+        [GET_POST_SUCCESS]: (state,{payload: input}) => ({
+            ...state,
+            loading: {
+                ...state.loading,
+                GET_POST: false //요청완료
+            },
+            input: input
+        }),
+        [GET_POST_FAILURE]: (state,action) => ({
+            ...state,
+            loading: {
+                ...state.loading,
+                GET_POST: false
+            }
+        }),
+        [GET_USERS]: (state,action) => ({
+            ...state,
+            loading: {
+                ...state.loading,
+                GET_USERS: true //요청시작
+            }
+        }),
+        [GET_USERS_SUCCESS]: (state,action) => ({
+            ...state,
+            loading: {
+                ...state.loading,
+                GET_USERS: false
+            },
+            users: action.payload
+        }),
+        [GET_USERS_FAILURE]: (state,action) => ({
+            ...state,
+            loading: {
+                ...state.loading,
+                GET_USERS: false
+            }
+        })
+    },
+    initialState
+);
+
+export default sample;
