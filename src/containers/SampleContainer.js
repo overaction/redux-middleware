@@ -5,7 +5,7 @@ import Sample from '../components/Sample';
 
 const SampleContainer = () => {
     const {post, users, loadingPost, loadingUsers} = useSelector(({sample}) => ({
-        post: sample.post,
+        post: sample.postt,
         users: sample.users,
         loadingPost: sample.loading.GET_POST,
         loadingUsers: sample.loading.GET_USERS

@@ -46,7 +46,7 @@ const sample = handleActions(
                 ...state.loading,
                 GET_POST: false //요청완료
             },
-            post: input,
+            postt: input,
         }),
         [GET_POST_FAILURE]: (state,action) => ({
             ...state,
