@@ -14,9 +14,9 @@ const SampleContainer = () => {
     const getpost = useCallback(id => dispatch(getPost(id)),[dispatch]);
     const getusers = useCallback(() => dispatch(getUsers()),[dispatch]);
     useEffect(() => {
-        getpost(1);
+        getpost(3);
         getusers();
-    },[getPost, getUsers])
+    },[getpost,getusers]);
     return (
         <Sample
             post={post}
@@ -28,8 +28,8 @@ const SampleContainer = () => {
 }
 export default SampleContainer;
 
-/*
 
+/*
 import React, { useEffect } from 'react';
 import {connect} from 'react-redux';
 import Sample from '../components/Sample';
@@ -69,5 +69,4 @@ export default connect(
         getUsers
     }
 )(SampleContainer);
-
 */
